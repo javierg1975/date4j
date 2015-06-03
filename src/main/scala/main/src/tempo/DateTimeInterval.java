@@ -1,7 +1,4 @@
-package hirondelle.date4j;
-
-import hirondelle.date4j.DateTime.DayOverflow;
-import hirondelle.date4j.DateTime.Unit;
+package tempo;
 
 /**
  Helper class for adding intervals of time. 
@@ -115,13 +112,13 @@ final class DateTimeInterval {
 
   private void checkRange(Integer aValue, String aName) {
     if ( aValue <  MIN || aValue > MAX ) { 
-      throw new IllegalArgumentException(aName + " is not in the range " + MIN + ".." + MAX); 
+      throw new IllegalArgumentException(aName + " is not in the range " + MIN + "main" + MAX);
     }
   }
   
   private void checkRangeNanos(Integer aValue) {
     if ( aValue <  MIN_NANOS || aValue > MAX_NANOS ) { 
-      throw new IllegalArgumentException("Nanosecond interval is not in the range " + MIN_NANOS + ".." + MAX_NANOS); 
+      throw new IllegalArgumentException("Nanosecond interval is not in the range " + MIN_NANOS + "main" + MAX_NANOS);
     }
   }
   

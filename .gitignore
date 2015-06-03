@@ -1,5 +1,33 @@
-# Ignore Maven "target"
-target
+*.jar
+!sbt-launch.jar
+*.class
+/lib
+/lib_managed
+/logs
+/bin
+/project/boot
+/project/build/target
+/project/target
+/project-old
+/project/project/target
+/target
+.idea
+/project/plugins/target
+*.DS_Store
+/out
+*.history
 
-# John uses "classes" for his source folder.
-classes
+*.csv
+.cache
+.classpath
+.externalToolBuilders/
+.project
+.settings/
+build.xml
+.env
+Departures.sublime-project
+.ensime*
+.ensime_lucene/
+Departures.sublime-workspace
+*.sc
+.env*
