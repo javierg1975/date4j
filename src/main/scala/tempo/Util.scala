@@ -1,6 +1,5 @@
 package tempo
 
-import java.util.logging.Logger
 
 /**
  * Created by javier on 6/2/15.

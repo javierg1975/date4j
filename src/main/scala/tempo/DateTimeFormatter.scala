@@ -420,7 +420,7 @@ class DateTimeFormatter {
     result
   }
 
-  private def nanosWithLeadingZeroes(aNanos: Integer): String = {
+  private def nanosWithLeadingZeroes(aNanos: Int): String = {
     var result: String = valueStr(aNanos)
     while (result.length < 9) {
       result = "0" + result
@@ -445,7 +445,7 @@ class DateTimeFormatter {
     result
   }
 
-  private def fullMonth(aMonth: Integer): String = {
+  private def fullMonth(aMonth: Int): String = {
     var result: String = ""
     if (aMonth != null) {
       if (fCustomLocalization != null) {
@@ -461,11 +461,11 @@ class DateTimeFormatter {
     result
   }
 
-  private def lookupCustomMonthFor(aMonth: Integer): String = {
+  private def lookupCustomMonthFor(aMonth: Int): String = {
     fCustomLocalization.Months.get(aMonth - 1)
   }
 
-  private def lookupMonthFor(aMonth: Integer): String = {
+  private def lookupMonthFor(aMonth: Int): String = {
     var result: String = DateTimeFormatter.EMPTY_STRING
     if (!fMonths.containsKey(fLocale)) {
       val months: List[String] = new ArrayList[String]
@@ -492,7 +492,7 @@ class DateTimeFormatter {
     result
   }
 
-  private def fullWeekday(aWeekday: Integer): String = {
+  private def fullWeekday(aWeekday: Int): String = {
     var result: String = ""
     if (aWeekday != null) {
       if (fCustomLocalization != null) {
@@ -508,11 +508,11 @@ class DateTimeFormatter {
     result
   }
 
-  private def lookupCustomWeekdayFor(aWeekday: Integer): String = {
+  private def lookupCustomWeekdayFor(aWeekday: Int): String = {
     fCustomLocalization.Weekdays.get(aWeekday - 1)
   }
 
-  private def lookupWeekdayFor(aWeekday: Integer): String = {
+  private def lookupWeekdayFor(aWeekday: Int): String = {
     var result: String = DateTimeFormatter.EMPTY_STRING
     if (!fWeekdays.containsKey(fLocale)) {
       val weekdays: List[String] = new ArrayList[String]
@@ -548,8 +548,8 @@ class DateTimeFormatter {
   }
 
   /** Coerce the hour to match the number used in the 12-hour style. */
-  private def twelveHourStyle(aHour: Integer): Integer = {
-    var result: Integer = aHour
+  private def twelveHourStyle(aHour: Int): Int = {
+    var result: Int = aHour
     if (aHour != null) {
       if (aHour eq 0) {
         result = 12
@@ -561,7 +561,7 @@ class DateTimeFormatter {
     result
   }
 
-  private def amPmIndicator(aHour: Integer): String = {
+  private def amPmIndicator(aHour: Int): String = {
     var result: String = ""
     if (aHour != null) {
       if (fCustomLocalization != null) {
@@ -577,7 +577,7 @@ class DateTimeFormatter {
     result
   }
 
-  private def lookupCustomAmPmFor(aHour: Integer): String = {
+  private def lookupCustomAmPmFor(aHour: Int): String = {
     var result: String = DateTimeFormatter.EMPTY_STRING
     if (aHour < 12) {
       result = fCustomLocalization.AmPmIndicators.get(DateTimeFormatter.AM)
@@ -588,7 +588,7 @@ class DateTimeFormatter {
     result
   }
 
-  private def lookupAmPmFor(aHour: Integer): String = {
+  private def lookupAmPmFor(aHour: Int): String = {
     var result: String = DateTimeFormatter.EMPTY_STRING
     if (!fAmPm.containsKey(fLocale)) {
       val indicators: List[String] = new ArrayList[String]
@@ -605,7 +605,7 @@ class DateTimeFormatter {
     result
   }
 
-  private def getAmPmTextFor(aHour: Integer): String = {
+  private def getAmPmTextFor(aHour: Int): String = {
     val format: SimpleDateFormat = new SimpleDateFormat("a", fLocale)
     val someDay: Calendar = new GregorianCalendar
     someDay.set(Calendar.YEAR, 2000)

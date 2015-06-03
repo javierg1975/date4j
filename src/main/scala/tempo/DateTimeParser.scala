@@ -36,7 +36,7 @@ object DateTimeParser {
   val CL: String = "\\:"
   val TT: String = "(\\d\\d)"
   val NUM_DIGITS_FOR_FRACTIONAL_SECONDS: String = "9"
-  val NUM_DIGITS: Integer = Integer.valueOf(NUM_DIGITS_FOR_FRACTIONAL_SECONDS)
+  val NUM_DIGITS: Int = Int.valueOf(NUM_DIGITS_FOR_FRACTIONAL_SECONDS)
   val TIME: Pattern = Pattern.compile("" + TT + CL + TT + CL + TT + "\\." + "(\\d{1," + NUM_DIGITS_FOR_FRACTIONAL_SECONDS + "})" + "|" + TT + CL + TT + CL + TT + "|" + TT + CL + TT + "|" + TT)
   val COLON: String = ":"
   val THIRD_POSITION: Int = 2
@@ -124,15 +124,15 @@ class DateTimeParser {
     if (matcher.matches) {
       val year: String = getGroup(matcher, 1, 4, 6)
       if (year != null) {
-        year = Integer.valueOf(year)
+        year = Int.valueOf(year)
       }
       val month: String = getGroup(matcher, 2, 5)
       if (month != null) {
-        month = Integer.valueOf(month)
+        month = Int.valueOf(month)
       }
       val day: String = getGroup(matcher, 3)
       if (day != null) {
-        day = Integer.valueOf(day)
+        day = Int.valueOf(day)
       }
     }
     else {
@@ -154,19 +154,19 @@ class DateTimeParser {
     if (matcher.matches) {
       val hour: String = getGroup(matcher, 1, 5, 8, 10)
       if (hour != null) {
-        hour = Integer.valueOf(hour)
+        hour = Int.valueOf(hour)
       }
       val minute: String = getGroup(matcher, 2, 6, 9)
       if (minute != null) {
-        minute = Integer.valueOf(minute)
+        minute = Int.valueOf(minute)
       }
       val second: String = getGroup(matcher, 3, 7)
       if (second != null) {
-        second = Integer.valueOf(second)
+        second = Int.valueOf(second)
       }
       val decimalSeconds: String = getGroup(matcher, 4)
       if (decimalSeconds != null) {
-        nanosecond = Integer.valueOf(convertToNanoseconds(decimalSeconds))
+        nanosecond = Int.valueOf(convertToNanoseconds(decimalSeconds))
       }
     }
     else {

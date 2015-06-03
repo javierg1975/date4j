@@ -258,8 +258,8 @@ object ToStringUtil {
       fPong
     }
 
-    def getId: Integer = {
-      new Integer(123)
+    def getId: Int = {
+      new Int(123)
     }
 
     def getUserPassword: String = {

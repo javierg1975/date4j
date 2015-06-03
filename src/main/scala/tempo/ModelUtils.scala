@@ -252,7 +252,7 @@ object ModelUtil {
 
    <P>If the caller is using a <em>primitive</em> field, then it must be converted to a corresponding
    wrapper object to be included in <tt>aFields</tt>. For example, an <tt>int</tt> field would need
-   conversion to an {@link Integer} before being passed to this method.
+   conversion to an {@link Int} before being passed to this method.
     */
   def hashCodeFor(aFields: AnyRef*): Int = {
     var result: Int = HASH_SEED
